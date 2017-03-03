@@ -17,8 +17,8 @@
         html,
         body {
             height: 100%;
-            margin: 0;
-            padding: 0;
+            margin: 10px;
+            padding: 10px;
         }
     </style>
 </head>
@@ -34,8 +34,85 @@
                     lat: 55.706335,
                     lng: 12.539451,
                 },
-                zoom: 18
+                zoom: 8
             });
+
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: 55.706335,
+                    lng: 12.539451
+                },
+                map: map,
+                title: 'KEA!'
+
+            });
+
+            marker.addListener('click', function () {
+                map.setZoom(18);
+                map.setCenter(marker.getPosition());
+            });
+
+
+
+
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: 55.706322,
+                    lng: 12.541627
+                },
+                map: map,
+                title: 'Bispebjerg station!'
+
+
+            });
+
+            marker.addListener('click', function () {
+                map.setZoom(18);
+                map.setCenter(marker.getPosition());
+            });
+
+
+
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: 55.711273,
+                    lng: 12.564667
+                },
+                map: map,
+                title: 'Fitness World Østerbro!'
+            });
+
+            marker.addListener('click', function () {
+                map.setZoom(18);
+                map.setCenter(marker.getPosition());
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: "Tag en danse time hver torsdag i dette enter"
+
+            });
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+
+
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: 55.705307,
+                    lng: 12.537500
+                },
+                map: map,
+                title: 'Fitness World Lygten!'
+            });
+
+
+
+
+
+
+
+
+
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBrrGqz3RjLlRJs-4S_Eg07k2Zf843H0U&callback=initMap" async defer></script>
